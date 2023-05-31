@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Calculadora</h1>
+    <form>
+        <label>Primeiro Número</label>
+        <input id="n1" type="number"><br>
+        <label>Segundo Número</label>
+        <input id="n2" type="number"><br>
+        <h2>Operação</h2>
+        <label>Soma: </label>
+        <input type="radio" name="operacao" id="Soma"> <br>
+        <label>Subtração:</label>
+        <input type="radio" name="operacao" id="Subtracao"> <br>
+        <label>Multiplicação:</label>
+        <input type="radio" name="operacao" id="Multiplicacao"> <br>
+        <label>Divisão:</label>
+        <input type="radio" name="operacao" id="Divisao"> <br>
+        <button onclick="calcularNumeros()"> Calcular</button>
+        <p>Resultado: </p> <span id="resultado"></span>
+    </form>
+</body>
+<script>
+    function calcularNumeros() {
+        event.preventDefault()
+        var n1 = parseFloat(document.getElementById("n1").value);
+        var n2 = parseFloat(document.getElementById("n2").value);
+        var resultado = 0;
+
+
+        if (document.getElementById("Soma").checked) {
+            resultado = n1 + n2;
+        } else if (document.getElementById("Subtracao").checked) {
+            resultado = n1 - n2;
+        } else if (document.getElementById("Multiplicacao").checked) {
+            resultado = n1 * n2;
+        } else if (document.getElementById("Divisao").checked) {
+            resultado = n1 / n2;
+        }
+
+        document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+    }
+
+</script>
+
+</html>
