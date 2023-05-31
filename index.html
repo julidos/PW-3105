@@ -10,7 +10,6 @@
 
 <body>
     <h1> Calculadora</h1>
-    <form>
         <label>Primeiro Número</label>
         <input id="n1" type="number"><br>
         <label>Segundo Número</label>
@@ -24,13 +23,11 @@
         <input type="radio" name="operacao" id="Multiplicacao"> <br>
         <label>Divisão:</label>
         <input type="radio" name="operacao" id="Divisao"> <br>
-        <button onclick="calcularNumeros()"> Calcular</button>
         <p>Resultado: </p> <span id="resultado"></span>
-    </form>
+            <button onclick="calcularNumeros()"> Calcular</button>
 </body>
 <script>
     function calcularNumeros() {
-        event.preventDefault()
         var n1 = parseFloat(document.getElementById("n1").value);
         var n2 = parseFloat(document.getElementById("n2").value);
         var resultado = 0;
