@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Atividade 2</title>
+</head>
+
+<body>
+    <div>
+        <label for="Altura">Digite sua altura: </label>
+        <input id="altura" type="text">
+    </div>
+    <div>
+        <label for="peso">Digite seu peso: </label>
+        <input id="peso" type="text">
+    </div>
+    <div>
+        <button onclick="calcularIMC()">Clique para saber seu IMC</button>
+    </div>
+    <div>
+        <h2>Seu IMC é de: <span id=vlrIMC></span></h2>
+        <h2>Sua situação é: <span id=RSituacao></span></h2>
+    </div>
+    <footer>
+        <a href="./index.html"><button>Clique aqui para voltar a tela inicial</button></a>
+    </footer>
+</body>
+<script>
+    function calcularIMC() {
+        var altura = parseFloat(document.getElementById("altura").value.replace(",", "."));
+        var peso = parseFloat(document.getElementById("peso").value);
+        var cordeFundo = document.getElementById("RSituacao");
+        IMC = peso / (altura ** 2);
+
+        if (IMC < 17) {
+            situacao = "Muito abaixo do peso";
+            cor = "Red";
+        } else if (IMC > 17) {
+            if (IMC <= 18.49) {
+                situacao = "Abaixo do peso";
+                cor = "Orange";
+            } else if (IMC >= 18.50) {
+                if (IMC <= 24.99) {
+                    situacao = "Peso normal";
+                    cor = "Green";
+                } else if (IMC >= 25) {
+                    if (IMC <= 29.99) {
+                        situacao = "Acima do peso";
+                        cor = "Orange";
+                    } else if (IMC >= 30) {
+                        if (IMC <= 34.99) {
+                            situacao = "Obesidade I";
+                            cor = "Red";
+                        } else if (IMC >= 35) {
+                            if (IMC <= 39.99) {
+                                situacao = "Obesidade II";
+                            } else {
+                                situacao = "Obesidade III";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        cordeFundo.style.color = cor;
+        document.getElementById("vlrIMC").innerHTML = IMC.toFixed(2);
+        document.getElementById("RSituacao").innerHTML = situacao;
+    }
+</script>
+
+</html>

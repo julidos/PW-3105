@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Atividade 3</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <label>Escreva o próximo item da lista: </label>
+            <input id="Valor">
+        </div>
+        <div>
+            <label>Branco: </label>
+            <input type="radio" name="cor" id="White"> <br>
+        </div>
+        <div>
+            <label>Vermelho: </label>
+            <input type="radio" name="cor" id="Red"> <br>
+        </div>
+        <div>
+            <label>Verde: </label>
+            <input type="radio" name="cor" id="Green"> <br>
+        </div>
+        <div>
+            <button id="btn">Clique para adicionar</button>
+        </div>
+        <div>
+            <ul id="minhaLista">
+                <li>Fluminense</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <a href="./index.html"><button>Clique aqui para voltar a tela inicial</button></a>
+    </footer>
+</body>
+<script>
+    var botao = document.getElementById("btn");
+    botao.addEventListener("click", adicionarItems);
+
+    function adicionarItems() {
+        const elemento = document.createElement("li");
+
+        var texto = document.getElementById("Valor").value;
+
+        const textoelemento = document.createTextNode(texto);
+
+        elemento.appendChild(textoelemento);
+        document.getElementById("minhaLista").appendChild(elemento);
+
+        var cor = document.querySelector('input[name="cor"]:checked').id;
+
+        elemento.style.color = cor;
+
+        var radioButtons = document.querySelectorAll('input[name="cor"]');
+        radioButtons.forEach(function (button) {
+            button.checked = false;
+        });
+    }
+</script>
+
+</html>

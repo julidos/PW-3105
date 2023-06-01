@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Atividade 1 B</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <label for="Nota1"> Digite a nota 1: </label>
+            <input id="nota1" type="text">
+            <br>
+            <label for="Nota2"> Digite a nota 2: </label>
+            <input id="nota2" type="text">
+        </div>
+
+        <div>
+            <button onclick="calcularMedia()"> Calcular Média</button>
+        </div>
+
+        <div id="Passou">
+            <p>Média: <span id="RMedia"></span></p>
+            <p>Situação: <span id="RSituacao"></span></p>
+        </div>
+    </div>
+    <footer>
+        <a href="./index.html"><button>Clique aqui para voltar a tela inicial</button></a>
+    </footer>
+</body>
+
+<script>
+    function calcularMedia() {
+        var situacao = "";
+        var cor = "";
+        var nota1 = parseFloat(document.getElementById("nota1").value);
+        var nota2 = parseFloat(document.getElementById("nota2").value);
+        var cordeFundo = document.getElementById("RSituacao");
+        media = (nota1 + nota2) / 2;
+
+        if (media >= 6) {
+            situacao = "Aprovado";
+            cor = "Blue"
+        } else {
+            situacao = "Reprovado";
+            cor = "Red"
+        }
+
+        cordeFundo.style.color = cor;
+        document.getElementById("RMedia").innerHTML = media;
+        document.getElementById("RSituacao").innerHTML = situacao;
+    }
+</script>
+
+</html>

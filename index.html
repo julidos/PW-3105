@@ -1,51 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <title>Index</title>
 </head>
 
 <body>
-    <h1> Calculadora</h1>
-        <label>Primeiro Número</label>
-        <input id="n1" type="number"><br>
-        <label>Segundo Número</label>
-        <input id="n2" type="number"><br>
-        <h2>Operação</h2>
-        <label>Soma: </label>
-        <input type="radio" name="operacao" id="Soma"> <br>
-        <label>Subtração:</label>
-        <input type="radio" name="operacao" id="Subtracao"> <br>
-        <label>Multiplicação:</label>
-        <input type="radio" name="operacao" id="Multiplicacao"> <br>
-        <label>Divisão:</label>
-        <input type="radio" name="operacao" id="Divisao"> <br>
-        <p>Resultado: </p> <span id="resultado"></span>
-            <button onclick="calcularNumeros()"> Calcular</button>
+    <h1>Links para os exercicios</h1>
+    <div>
+        <a href="./atividade1a.html"><button>Atividade 1 A</button></a>
+    </div>
+    <div>
+        <a href="./atividade1b.html"><button>Atividade 1 B</button></a>
+    </div>
+    <div>
+        <a href="./atividade2.html"><button>Atividade 2</button></a>
+    </div>
+    <div>
+        <a href="./atividade3.html"><button>Atividade 3</button></a>
+    </div>
+    <div>
+        <a href="./atividadecalculadora.html"><button>Calculadora</button></a>
+    </div>
+
 </body>
-<script>
-    function calcularNumeros() {
-        var n1 = parseFloat(document.getElementById("n1").value);
-        var n2 = parseFloat(document.getElementById("n2").value);
-        var resultado = 0;
-
-
-        if (document.getElementById("Soma").checked) {
-            resultado = n1 + n2;
-        } else if (document.getElementById("Subtracao").checked) {
-            resultado = n1 - n2;
-        } else if (document.getElementById("Multiplicacao").checked) {
-            resultado = n1 * n2;
-        } else if (document.getElementById("Divisao").checked) {
-            resultado = n1 / n2;
-        }
-
-        document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
-    }
-
-</script>
 
 </html>
