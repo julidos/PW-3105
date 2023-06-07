@@ -2,63 +2,66 @@
 <html lang="pt-br">
 
 <head>
+    <link rel="shortcut icon" href="./cont/icones/lista.ico" type="image/ico">
+    <link rel="stylesheet" href="style.css">
     <title>Atividade 3</title>
 </head>
 
-<body>
-    <div>
-        <div>
-            <label>Escreva o próximo item da lista: </label>
-            <input id="Valor">
-        </div>
-        <div>
-            <label>Branco: </label>
-            <input type="radio" name="cor" id="White"> <br>
-        </div>
-        <div>
-            <label>Vermelho: </label>
-            <input type="radio" name="cor" id="Red"> <br>
-        </div>
-        <div>
-            <label>Verde: </label>
-            <input type="radio" name="cor" id="Green"> <br>
-        </div>
-        <div>
-            <button id="btn">Clique para adicionar</button>
-        </div>
-        <div>
+<body id="atividade3">
+    <main class="conteudo">
+        <div id="minhaListaDiv">
             <ul id="minhaLista">
                 <li>Fluminense</li>
             </ul>
         </div>
-    </div>
-    <footer>
-        <a href="./index.html"><button>Clique aqui para voltar a tela inicial</button></a>
-    </footer>
+        <section class="caixa">
+            <div>
+                <h5>Escreva o próximo item: </h5>
+            </div>
+            <div>
+                <input id="Valor">
+            </div>
+            <div id="escolhas">
+                <div class="radio">
+                    <h5>Escolha a cor:</h5>
+                    <div>
+                        <label>Branco: </label>
+                        <input type="radio" name="cor" id="White"> <br>
+                    </div>
+                    <div>
+                        <label>Vermelho: </label>
+                        <input type="radio" name="cor" id="Red"> <br>
+                    </div>
+                    <div>
+                        <label>Verde: </label>
+                        <input type="radio" name="cor" id="Green"> <br>
+                    </div>
+                </div>
+                <div class="radio">
+                    <h5>Escolha o marcador:</h5>
+                    <div>
+                        <label>Círculo: </label>
+                        <input type="radio" name="marcador" id="circle" value="circle"> <br>
+                    </div>
+                    <div>
+                        <label>Quadrado: </label>
+                        <input type="radio" name="marcador" id="square" value="square"> <br>
+                    </div>
+                    <div>
+                        <label>Disco: </label>
+                        <input type="radio" name="marcador" id="disc" value="disc"> <br>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button id="btn" class="btn">Clique para adicionar</button>
+                <button id="btnLimpar" class="btn">Limpar</button>
+            </div>
+            <a href="./index.html"><button id="voltar" class="btn">Voltar</button></a>
+        </section>
+    </main>
 </body>
-<script>
-    var botao = document.getElementById("btn");
-    botao.addEventListener("click", adicionarItems);
 
-    function adicionarItems() {
-        const elemento = document.createElement("li");
-
-        var texto = document.getElementById("Valor").value;
-
-        const textoelemento = document.createTextNode(texto);
-
-        elemento.appendChild(textoelemento);
-        document.getElementById("minhaLista").appendChild(elemento);
-
-        var cor = document.querySelector('input[name="cor"]:checked').id;
-
-        elemento.style.color = cor;
-
-        var radioButtons = document.querySelectorAll('input[name="cor"]');
-        radioButtons.forEach(function (button) {
-            button.checked = false;
-        });
-    }
-</script>
+<script src="script.js"></script>
 
 </html>

@@ -6,47 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1> Calculadora</h1>
-    <label>Primeiro Número</label>
-    <input id="n1" type="number"><br>
-    <label>Segundo Número</label>
-    <input id="n2" type="number"><br>
-    <h2>Operação</h2>
-    <label>Soma: </label>
-    <input type="radio" name="operacao" id="Soma"> <br>
-    <label>Subtração:</label>
-    <input type="radio" name="operacao" id="Subtracao"> <br>
-    <label>Multiplicação:</label>
-    <input type="radio" name="operacao" id="Multiplicacao"> <br>
-    <label>Divisão:</label>
-    <input type="radio" name="operacao" id="Divisao"> <br>
-    <p>Resultado: </p> <span id="resultado"></span>
-    <button onclick="calcularNumeros()"> Calcular</button>
+    <section>
+        <h1> Calculadora</h1>
+        <div>
+            <label>Primeiro Número</label>
+            <input id="n1" type="number"><br>
+        </div>
+        <div>
+            <label>Segundo Número</label>
+            <input id="n2" type="number"><br>
+        </div>
+        <div>
+            <h2>Operação</h2>
+            <label>Soma: </label>
+            <input type="radio" name="operacao" id="Soma"> <br>
+            <label>Subtração:</label>
+            <input type="radio" name="operacao" id="Subtracao"> <br>
+            <label>Multiplicação:</label>
+            <input type="radio" name="operacao" id="Multiplicacao"> <br>
+            <label>Divisão:</label>
+            <input type="radio" name="operacao" id="Divisao"> <br>
+        </div>
+        <div>
+            <p>Resultado: <span id="resultado"></span></p>
+        </div>
+        <div>
+            <button onclick="calcularNumeros()"> Calcular</button>
+        </div>
+        <div><a href="./index.html"><button class="btn">Clique aqui para voltar a tela inicial</button></a></div>
+    </section>
 </body>
 
-<script>
-    function calcularNumeros() {
-        var n1 = parseFloat(document.getElementById("n1").value);
-        var n2 = parseFloat(document.getElementById("n2").value);
-        var resultado = 0;
-
-
-        if (document.getElementById("Soma").checked) {
-            resultado = n1 + n2;
-        } else if (document.getElementById("Subtracao").checked) {
-            resultado = n1 - n2;
-        } else if (document.getElementById("Multiplicacao").checked) {
-            resultado = n1 * n2;
-        } else if (document.getElementById("Divisao").checked) {
-            resultado = n1 / n2;
-        }
-
-        document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
-    }
-
-</script>
+<script src="script.js"></script>
 
 </html>
