@@ -1,4 +1,8 @@
 
+var botao = document.getElementById("btn");
+botao.addEventListener("click", adicionarItems);
+document.getElementById("btnLimpar").addEventListener("click", limparInputs);
+
 function calcularMedia() {
     var n1 = prompt('Digite a Nota 1:');
 
@@ -113,12 +117,13 @@ function calcularIMC() {
     document.getElementById("RSituacao").innerHTML = situacao;
 }
 
-var botao = document.getElementById("btn");
-botao.addEventListener("click", adicionarItems);
-
 function adicionarItems() {
     const elemento = document.createElement("li");
     var texto = document.getElementById("Valor").value;
+    if (texto === "") {
+        alert("Insira um valor válido.");
+        return;
+    }
     const textoelemento = document.createTextNode(texto);
     elemento.appendChild(textoelemento);
 
@@ -161,6 +166,10 @@ function obterCor() {
     return "black";
 }
 
+function chamarFuncoes(){
+
+}
+
 function calcularNumeros() {
     var n1 = parseFloat(document.getElementById("n1").value);
     var n2 = parseFloat(document.getElementById("n2").value);
@@ -195,11 +204,7 @@ function limparInputs() {
     spans.forEach((span) => {
         span.textContent = "";
     });
-}
 
-document.getElementById("btnLimpar").addEventListener("click", limparLista);
-
-function limparLista() {
     const lista = document.getElementById("minhaLista");
     while (lista.childElementCount > 1) {
         lista.removeChild(lista.lastElementChild);
